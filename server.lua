@@ -1,9 +1,13 @@
 AddEventHandler('NoNPC:InvokeEnable', function()
-	TriggerClientEvent('NoNPC:Enable', -1)
+	if IsPlayerAceAllowed(source, 'NoNPC.Toggle') then
+		TriggerClientEvent('NoNPC:Enable', -1)
+	end
 end)
 
 AddEventHandler('NoNPC:InvokeDisable', function()
-	TriggerClientEvent('NoNPC:Disable', -1)
+	if IsPlayerAceAllowed(source, 'NoNPC.Toggle') then
+		TriggerClientEvent('NoNPC:Disable', -1)
+	end
 end)
 
 RegisterServerEvent('NoNPC:InvokeEnable')
